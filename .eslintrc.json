@@ -1,0 +1,70 @@
+{
+    // Configuration for JavaScript files
+    "extends": ["airbnb-base", "plugin:prettier/recommended"],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "endOfLine": "auto"
+        }
+      ]
+    },
+    "overrides": [
+      // Configuration for TypeScript files
+      {
+        "files": ["**/*.ts", "**/*.tsx"],
+        "plugins": [
+          "@typescript-eslint",
+          "unused-imports",
+          "simple-import-sort",
+          "jsx-a11y"
+        ],
+        "extends": [
+          "airbnb-typescript",
+          "plugin:prettier/recommended",
+          "plugin:jsx-a11y/recommended",
+          "react-app"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.json"
+        },
+        "rules": {
+          "prettier/prettier": [
+            "error",
+            {
+              "singleQuote": true,
+              "endOfLine": "auto"
+            }
+          ],
+          "react/destructuring-assignment": "warn", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+          "jsx-a11y/anchor-is-valid": "warn", // Next.js use his own internal link system
+          "react/require-default-props": "warn", // Allow non-defined react props as undefined
+          "react/jsx-props-no-spreading": "warn", // _app.tsx uses spread operator and also, react-hook-form
+          "react-hooks/exhaustive-deps": "warn", // Incorrectly report needed dependency with Next.js router
+          "@typescript-eslint/comma-dangle": "warn", // Avoid conflict rule between Eslint and Prettier
+          "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+          "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+          "simple-import-sort/imports": "warn", // Import configuration for `eslint-plugin-simple-import-sort`
+          "simple-import-sort/exports": "warn", // Export configuration for `eslint-plugin-simple-import-sort`
+          "@typescript-eslint/no-unused-vars": "warn",
+          "unused-imports/no-unused-imports": "warn",
+          "@typescript-eslint/no-shadow": "warn",
+          "no-param-reassign": "warn",
+          "consistent-return": "warn",
+          "unused-imports/no-unused-vars": [
+            "warn",
+            {
+              "argsIgnorePattern": "^_"
+            }
+          ]
+        }
+      },
+      // Configuration for testing
+      {
+        "files": [""],
+        "plugins": [],
+        "extends": []
+      }
+    ]
+  }
