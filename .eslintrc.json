@@ -42,7 +42,7 @@
           "react/require-default-props": "warn", // Allow non-defined react props as undefined
           "react/jsx-props-no-spreading": "warn", // _app.tsx uses spread operator and also, react-hook-form
           "react-hooks/exhaustive-deps": "warn", // Incorrectly report needed dependency with Next.js router
-          "@typescript-eslint/comma-dangle": "warn", // Avoid conflict rule between Eslint and Prettier
+          "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
           "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
           "import/prefer-default-export": "off", // Named export is easier to refactor automatically
           "simple-import-sort/imports": "warn", // Import configuration for `eslint-plugin-simple-import-sort`
