@@ -6,7 +6,7 @@ import {
 
 const BottomNavigation = () => {
   return (
-    <footer className="flex items-center absolute bottom-0 w-full bg-gray-50 h-14">
+    <div className="flex items-center fixed bottom-0 w-full bg-gray-50 h-14">
       <div className="w-full flex justify-around items-center p-2">
         {/* Contact button */}
         <button className="flex flex-col items-center w-full">
@@ -26,7 +26,7 @@ const BottomNavigation = () => {
           <p className="text-gray-500 text-xs">Settings</p>
         </button>
       </div>
-    </footer>
+    </div>
   );
 };
 

@@ -1,3 +1,6 @@
+import { useEffect, useRef, useState } from 'react';
+import { io } from 'socket.io-client';
+
 const dummyData = [
   {
     id: 1,
@@ -20,6 +23,12 @@ const dummyData = [
 ];
 
 const Chat = () => {
+  const socket = useRef<any>();
+
+  useEffect(() => {
+    socket.current = io('ws://localhost:8000');
+  }, []);
+
   return (
     <div className="w-full h-[93%] bg-blue-100 pt-2">
       {dummyData.map((message) => (
